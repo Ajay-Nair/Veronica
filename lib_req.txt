@@ -11,3 +11,4 @@
                     Install and Use
 4.wikipedia
 5.requests:Requests allows you to send HTTP/1.1 requests extremely easily
+6.python-decouple:to use .env file.
