@@ -1,3 +1,11 @@
+
+#text to speech conversion
+def speak(text):
+    #speaks text which is passed
+    engine.say(text)
+    engine.runAndWait()
+
+
 #Creating a speech engine
 import pyttsx3
 from decouple import config
