@@ -6,6 +6,41 @@ from decouple import config
 #for greet
 from datetime import datetime
 
+#for speech recog
+import speech_recognition as sr
+from random import choice
+from utils import opening_text
+
+#Taking user input using speech recog
+def user_input():
+    #takes input and converts it to text using speech recognition
+
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening....")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+
+    try:
+        print("Recognizing..")
+        query = r.recognize_google(audio,language='en-in')
+        if not 'exit' in query or 'stop' in query:
+            speak(choice(opening_text))
+        else:
+            hour = datetime.now().hour
+            if( hour>=21 and hour<6):
+                speak(f"Good night boss ")
+            else:
+                speak("See ya bitch.")
+            exit()
+    except Exception:
+        speak('Sorry,I could not understand . Please say that again.')
+        query='None'
+    return query
+
+
+
+
 #text to speech conversion
 def speak(text):
     #speaks text which is passed
@@ -41,5 +76,3 @@ engine.setProperty('volume',1)      #value of vol between 0 and 1
 #set voic
 voices = engine.getProperty('voices')   #gets list of voices
 engine.setProperty('voice',voices[1].id) # 0 for male
-
-greet()
