@@ -1,0 +1,13 @@
+1.pyttx3 : It is a text to speech conversion library which works offline.
+2.SpeechRecognition : Convert audio into text.
+3.pywhatkit : Python library with various helpful features
+                features:
+                    Sending Message to a WhatsApp Group or Contact
+                    Sending Image to a WhatsApp Group or Contact
+                    Converting an Image to ASCII Art
+                    Converting a String to Handwriting
+                    Playing YouTube Videos
+                    Sending Mails with HTML Code
+                    Install and Use
+4.wikipedia
+5.requests:Requests allows you to send HTTP/1.1 requests extremely easily
