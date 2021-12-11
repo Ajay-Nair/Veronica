@@ -13,4 +13,5 @@
 5.requests:Requests allows you to send HTTP/1.1 requests extremely easily
 6.python-decouple:to use .env file.
 7.datetime
-8.
+8.os:provides functions for interacting with os
+9.subprocess:The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes.
