@@ -89,11 +89,11 @@ if __name__ == "__main__":
     while(True):
         query = user_input().lower()
         print(query)
-        if 'ip' in query:
+        if 'ip' in query:                               #find ip address
             print(find_my_ip())
-        elif 'camera' in query:
+        elif 'camera' in query:                         #open camera
             open_camera()
-        elif 'email' in query:
+        elif 'email' in query:                          #open email
             speak("Enter the subject")
             subject = input()
             speak("Enter the body")
