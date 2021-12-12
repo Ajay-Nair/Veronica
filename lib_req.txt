@@ -17,3 +17,5 @@
 9.subprocess:The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes.
 
 NOTE:os.startfile() not working for some reason use subprocess.call()
+
+10.smtplib(Simple Mail Transport Protocol)
