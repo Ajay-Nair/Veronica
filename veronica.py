@@ -12,7 +12,7 @@ from random import choice
 from utils import opening_text
 
 #importing functions
-from functions.online_fn import find_my_ip
+from functions.online_fn import find_my_ip,send_email
 
 from functions.os_fn import open_calc,open_cmd,open_discord,open_camera
 
@@ -31,14 +31,14 @@ def user_input():
     try:
         print("Recognizing..")
         query = r.recognize_google(audio,language='en-in')
-        if not 'exit' in query or 'stop' in query:
+        if not 'exit' in query or not 'stop' in query:
             speak(choice(opening_text))
         else:
             hour = datetime.now().hour
             if( hour>=21 and hour<6):
-                speak(f"Good night boss ")
+                speak(f"Good night sir")
             else:
-                speak("See ya bitch.")
+                speak("See ya boss.")
             exit()
     except Exception:
         speak('Sorry,I could not understand . Please say that again.')
@@ -93,5 +93,14 @@ if __name__ == "__main__":
             print(find_my_ip())
         elif 'camera' in query:
             open_camera()
+        elif 'email' in query:
+            speak("Enter the subject")
+            subject = input()
+            speak("Enter the body")
+            body = input()
+            speak("Enter the recieving email")
+            reciever = input()
+            send_email(subject,body,reciever)
+
         
 
