@@ -18,4 +18,4 @@
 
 NOTE:os.startfile() not working for some reason use subprocess.call()
 
-10.smtplib(Simple Mail Transport Protocol)
+10.smtplib(Simple Mail Transport Protocol) [NOTE:IT is used inside pywhatkit send_mail]
