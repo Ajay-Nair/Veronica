@@ -11,6 +11,13 @@ import speech_recognition as sr
 from random import choice
 from utils import opening_text
 
+#importing functions
+from functions.online_fn import find_my_ip
+
+from functions.os_fn import open_calc,open_cmd,open_discord,open_camera
+
+
+
 #Taking user input using speech recog
 def user_input():
     #takes input and converts it to text using speech recognition
@@ -76,3 +83,15 @@ engine.setProperty('volume',1)      #value of vol between 0 and 1
 #set voic
 voices = engine.getProperty('voices')   #gets list of voices
 engine.setProperty('voice',voices[1].id) # 0 for male
+
+if __name__ == "__main__":
+    greet()
+    while(True):
+        query = user_input().lower()
+        print(query)
+        if 'ip' in query:
+            print(find_my_ip())
+        elif 'camera' in query:
+            open_camera()
+        
+
