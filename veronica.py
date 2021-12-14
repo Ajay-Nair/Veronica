@@ -1,5 +1,6 @@
 
 #for speech engine
+from email import message
 import pyttsx3
 from decouple import config
 
@@ -12,7 +13,7 @@ from random import choice
 from utils import opening_text
 
 #importing functions
-from functions.online_fn import find_my_ip,send_email
+from functions.online_fn import find_my_ip,send_email,whatsapp
 
 from functions.os_fn import open_calc,open_cmd,open_discord,open_camera
 
@@ -88,6 +89,7 @@ engine.setProperty('voice',voices[1].id) # 0 for male
 if __name__ == "__main__":
     greet()
     while(True):
+        query = None
         query = user_input().lower()
         print(query)
         if 'ip' in query:                               #find ip address
@@ -102,6 +104,12 @@ if __name__ == "__main__":
             speak("Enter the recieving email")
             reciever = input()
             send_email(subject,body,reciever)
+        elif 'whatsapp' or 'message' in query:
+            speak("Enter the phone number")
+            number = input()
+            speak("Enter the message")
+            msg = input()
+            whatsapp(number,msg)
 
         
 
