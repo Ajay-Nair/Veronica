@@ -26,6 +26,7 @@ def user_input():
     with sr.Microphone() as source:
         print("Listening....")
         r.pause_threshold = 1
+        r.adjust_for_ambient_noise(source)
         audio = r.listen(source)
 
     try:
@@ -61,7 +62,7 @@ def greet():
         speak(f"Good morning {USERNAME} . I am {BOTNAME} , How may I assist you? ")
     elif( hour>=12 and hour<17):
         speak(f"Good afternoon {USERNAME} . I am {BOTNAME} How may I assist you?")
-    elif( hour>=17 and hour<21):
+    elif( hour>=17 and hour<23):
         speak(f"Good evening {USERNAME} . I am {BOTNAME} ,How may I assist you?")
     else:
         speak("Do you know what time it is ? Do it yourself!")
