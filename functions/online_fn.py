@@ -1,9 +1,7 @@
 from email.message import EmailMessage
 from decouple import config
-import pywhatkit
-import requests
-
 from pywhatkit import send_mail
+import requests
 def find_my_ip():
     #returns ip address
     ip_address = requests.get('https://api64.ipify.org?format=json').json()
